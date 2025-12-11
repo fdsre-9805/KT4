@@ -1,5 +1,4 @@
 # KT4
-[KT-4 — копия.html](https://github.com/user-attachments/files/24109939/KT-4.html)
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -30,7 +29,7 @@
     }
 
     .logo {
-        font-size: 24px;
+        font-size: 28px;
         font-weight: 300;
         letter-spacing: 1px;
     }
@@ -55,6 +54,7 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
+        font-size: 16px;
     }
 
     .tile-container {
@@ -77,22 +77,24 @@
         overflow: hidden;
         min-height: 150px;
         border: 1px solid rgba(255, 255, 255, 0.05);
-        transition: none; 
-    }
-
-    .tile::before {
-        display: none; 
+        transition: none;
     }
 
     .tile-icon {
-        font-size: 40px;
-        margin-bottom: 15px;
-        transform: none; 
+        font-size: 50px;
+        margin-bottom: 20px;
     }
 
-    .tile-badge {
-        opacity: 1;
-        transform: none;
+    .tile-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .tile-desc {
+        font-size: 14px;
+        opacity: 0.7;
+        line-height: 1.2;
     }
 
     .tile-wide { grid-column: span 2; }
@@ -110,39 +112,37 @@
     .tile-9 { color: #ff9ff3; }
     .tile-10 { color: #54a0ff; }
 
-    @media (max-width: 1200px) {
-        .tile-container { max-width: 1000px; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    
+    .tile-bottom {
+        grid-column: 1 / -1;
+        min-height: 700px;
+        background: rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        font-weight: 600;
+        border-radius: 12px;
+        text-align: center;
+       
     }
-    @media (max-width: 992px) {
-        .tile-container { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; padding: 30px; }
-        .tile { min-height: 130px; padding: 15px; }
-        .tile-icon { font-size: 35px; }
-        .top-bar { padding: 15px 30px; }
-    }
+
     @media (max-width: 768px) {
-        .tile-container { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; padding: 20px; }
-        .tile { min-height: 120px; padding: 12px; }
-        .tile-icon { font-size: 30px; margin-bottom: 10px; }
-        .tile-title { font-size: 14px; }
-        .tile-desc { font-size: 11px; }
-        .top-bar { padding: 12px 20px; }
-        .logo { font-size: 20px; }
-        .user-avatar { width: 35px; height: 35px; }
-        .tile-wide, .tile-tall, .tile-large { grid-column: span 1; grid-row: span 1; }
+        .tile-title { font-size: 30px; }
+        .tile-desc { font-size: 12px; }
+        .tile-icon { font-size: 40px; margin-bottom: 15px; }
     }
+
     @media (max-width: 576px) {
-        .tile-container { grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 15px; }
-        .tile { min-height: 110px; padding: 10px; }
-        .tile-icon { font-size: 28px; margin-bottom: 8px; }
-        .tile-title { font-size: 13px; }
-        .user-info { gap: 10px; }
+        .tile-title { font-size: 16px; }
+        .tile-desc { font-size: 11px; }
+        .tile-icon { font-size: 35px; margin-bottom: 10px; }
     }
+
     @media (max-width: 400px) {
-        .tile-container { grid-template-columns: repeat(2, 1fr); }
-        .tile { min-height: 100px; }
-        .tile-icon { font-size: 26px; }
-        .top-bar { flex-direction: column; gap: 10px; align-items: flex-start; }
-        .user-info { align-self: flex-end; margin-top: -40px; }
+        .tile-title { font-size: 14px; }
+        .tile-desc { font-size: 10px; }
+        .tile-icon { font-size: 30px; margin-bottom: 8px; }
     }
 </style>
 </head>
@@ -159,66 +159,66 @@
 <div class="tile-container">
     <div class="tile tile-1 tile-wide">
         <div class="tile-icon"></div>
-        <div class="tile-title">Dashboard</div>
-        <div class="tile-desc">Analytics & Reports</div>
-        <div class="tile-badge">New</div>
+        <div class="tile-title">Дашборд</div>
+        <div class="tile-desc">Отчёты</div>
     </div>
     
     <div class="tile tile-2">
         <div class="tile-icon"></div>
-        <div class="tile-title">Analytics</div>
-        <div class="tile-desc">Data visualization</div>
+        <div class="tile-title">Аналитика</div>
+        <div class="tile-desc">Графики</div>
     </div>
     
     <div class="tile tile-3 tile-tall">
         <div class="tile-icon"></div>
-        <div class="tile-title">Security</div>
-        <div class="tile-desc">System protection</div>
-        <div class="tile-badge">3</div>
+        <div class="tile-title">Безопасность</div>
+        <div class="tile-desc">Защита</div>
     </div>
     
     <div class="tile tile-4">
         <div class="tile-icon"></div>
-        <div class="tile-title">Cloud</div>
-        <div class="tile-desc">Storage services</div>
+        <div class="tile-title">Облако</div>
+        <div class="tile-desc">Файлы</div>
     </div>
     
     <div class="tile tile-5">
         <div class="tile-icon"></div>
-        <div class="tile-title">AI Tools</div>
-        <div class="tile-desc">Machine learning</div>
+        <div class="tile-title">AI</div>
+        <div class="tile-desc">Инструменты</div>
     </div>
     
     <div class="tile tile-6 tile-wide">
         <div class="tile-icon"></div>
-        <div class="tile-title">Mobile</div>
-        <div class="tile-desc">App development</div>
+        <div class="tile-title">Мобильные</div>
+        <div class="tile-desc">Приложения</div>
     </div>
     
     <div class="tile tile-7 tile-large">
         <div class="tile-icon"></div>
-        <div class="tile-title">Design Studio</div>
-        <div class="tile-desc">Creative workspace with tools</div>
-        <div class="tile-badge">Pro</div>
+        <div class="tile-title">Дизайн</div>
+        <div class="tile-desc">Студия</div>
     </div>
     
     <div class="tile tile-8">
         <div class="tile-icon"></div>
-        <div class="tile-title">Settings</div>
-        <div class="tile-desc">System configuration</div>
+        <div class="tile-title">Настройки</div>
+        <div class="tile-desc">Система</div>
     </div>
     
     <div class="tile tile-9">
         <div class="tile-icon"></div>
-        <div class="tile-title">Growth</div>
-        <div class="tile-desc">Performance metrics</div>
+        <div class="tile-title">Рост</div>
+        <div class="tile-desc">Метрики</div>
     </div>
     
     <div class="tile tile-10">
         <div class="tile-icon"></div>
-        <div class="tile-title">Notifications</div>
-        <div class="tile-desc">Alerts & updates</div>
-        <div class="tile-badge">12</div>
+        <div class="tile-title">Уведомления</div>
+        <div class="tile-desc">События</div>
+    </div>
+
+    <div class="tile-bottom">
+        РАБОТАТЬ С НАМИ
     </div>
 </div>
 
