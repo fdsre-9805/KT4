@@ -1,4 +1,5 @@
 # KT4
+[KT-4 — копия.html](https://github.com/user-attachments/files/24109939/KT-4.html)
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -72,89 +73,32 @@
         display: flex;
         flex-direction: column;
         cursor: pointer;
-        transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
         min-height: 150px;
         border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: none; 
     }
 
     .tile::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, transparent, currentColor, transparent);
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-
-    .tile:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        background: rgba(255, 255, 255, 0.15);
-    }
-
-    .tile:hover::before {
-        opacity: 0.7;
+        display: none; 
     }
 
     .tile-icon {
         font-size: 40px;
         margin-bottom: 15px;
-        transition: transform 0.3s;
-    }
-
-    .tile:hover .tile-icon {
-        transform: scale(1.1);
-    }
-
-    .tile-title {
-        font-size: 16px;
-        font-weight: 500;
-        margin-bottom: 8px;
-    }
-
-    .tile-desc {
-        font-size: 12px;
-        opacity: 0.7;
-        line-height: 1.4;
+        transform: none; 
     }
 
     .tile-badge {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: rgba(255, 255, 255, 0.2);
-        padding: 2px 8px;
-        border-radius: 10px;
-        font-size: 11px;
-        opacity: 0;
-        transform: translateX(10px);
-        transition: all 0.3s;
-    }
-
-    .tile:hover .tile-badge {
         opacity: 1;
-        transform: translateX(0);
+        transform: none;
     }
 
-        .tile-wide {
-        grid-column: span 2;
-    }
+    .tile-wide { grid-column: span 2; }
+    .tile-tall { grid-row: span 2; }
+    .tile-large { grid-column: span 2; grid-row: span 2; }
 
-    .tile-tall {
-        grid-row: span 2;
-    }
-
-    .tile-large {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-
-    
     .tile-1 { color: #00b4ff; }
     .tile-2 { color: #00d68f; }
     .tile-3 { color: #ff4757; }
@@ -166,159 +110,39 @@
     .tile-9 { color: #ff9ff3; }
     .tile-10 { color: #54a0ff; }
 
-   
-    .tile {
-        animation: tileAppear 0.5s ease-out;
-        animation-fill-mode: both;
-    }
-
-    @keyframes tileAppear {
-        from {
-            opacity: 0;
-            transform: scale(0.8) translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-    }
-
-    
-    .tile:nth-child(2) { animation-delay: 0.1s; }
-    .tile:nth-child(3) { animation-delay: 0.2s; }
-    .tile:nth-child(4) { animation-delay: 0.3s; }
-    .tile:nth-child(5) { animation-delay: 0.4s; }
-    .tile:nth-child(6) { animation-delay: 0.5s; }
-    .tile:nth-child(7) { animation-delay: 0.6s; }
-    .tile:nth-child(8) { animation-delay: 0.7s; }
-    .tile:nth-child(9) { animation-delay: 0.8s; }
-    .tile:nth-child(10) { animation-delay: 0.9s; }
-
-    
     @media (max-width: 1200px) {
-        .tile-container {
-            max-width: 1000px;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        }
+        .tile-container { max-width: 1000px; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
     }
-
     @media (max-width: 992px) {
-        .tile-container {
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 12px;
-            padding: 30px;
-        }
-        
-        .tile {
-            min-height: 130px;
-            padding: 15px;
-        }
-        
-        .tile-icon {
-            font-size: 35px;
-        }
-        
-        .top-bar {
-            padding: 15px 30px;
-        }
+        .tile-container { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; padding: 30px; }
+        .tile { min-height: 130px; padding: 15px; }
+        .tile-icon { font-size: 35px; }
+        .top-bar { padding: 15px 30px; }
     }
-
     @media (max-width: 768px) {
-        .tile-container {
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 10px;
-            padding: 20px;
-        }
-        
-        .tile {
-            min-height: 120px;
-            padding: 12px;
-        }
-        
-        .tile-icon {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-        
-        .tile-title {
-            font-size: 14px;
-        }
-        
-        .tile-desc {
-            font-size: 11px;
-        }
-        
-        .top-bar {
-            padding: 12px 20px;
-        }
-        
-        .logo {
-            font-size: 20px;
-        }
-        
-        .user-avatar {
-            width: 35px;
-            height: 35px;
-        }
-              
-        
-  .tile-wide,
-        .tile-tall,
-        .tile-large {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
+        .tile-container { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; padding: 20px; }
+        .tile { min-height: 120px; padding: 12px; }
+        .tile-icon { font-size: 30px; margin-bottom: 10px; }
+        .tile-title { font-size: 14px; }
+        .tile-desc { font-size: 11px; }
+        .top-bar { padding: 12px 20px; }
+        .logo { font-size: 20px; }
+        .user-avatar { width: 35px; height: 35px; }
+        .tile-wide, .tile-tall, .tile-large { grid-column: span 1; grid-row: span 1; }
     }
-
     @media (max-width: 576px) {
-        .tile-container {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            padding: 15px;
-        }
-        
-        .tile {
-            min-height: 110px;
-            padding: 10px;
-        }
-        
-        .tile-icon {
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
-        
-        .tile-title {
-            font-size: 13px;
-        }
-        
-        .user-info {
-            gap: 10px;
-        }
+        .tile-container { grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 15px; }
+        .tile { min-height: 110px; padding: 10px; }
+        .tile-icon { font-size: 28px; margin-bottom: 8px; }
+        .tile-title { font-size: 13px; }
+        .user-info { gap: 10px; }
     }
-
     @media (max-width: 400px) {
-        .tile-container {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        
-        .tile {
-            min-height: 100px;
-        }
-        
-        .tile-icon {
-            font-size: 26px;
-        }
-        
-        .top-bar {
-            flex-direction: column;
-            gap: 10px;
-            align-items: flex-start;
-        }
-        
-        .user-info {
-            align-self: flex-end;
-            margin-top: -40px;
-        }
+        .tile-container { grid-template-columns: repeat(2, 1fr); }
+        .tile { min-height: 100px; }
+        .tile-icon { font-size: 26px; }
+        .top-bar { flex-direction: column; gap: 10px; align-items: flex-start; }
+        .user-info { align-self: flex-end; margin-top: -40px; }
     }
 </style>
 </head>
@@ -397,8 +221,6 @@
         <div class="tile-badge">12</div>
     </div>
 </div>
-
-
 
 </body>
 </html>
